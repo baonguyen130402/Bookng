@@ -34,7 +34,7 @@ app.use(cors({
 // Photomiddlewares
 const photosMiddleware = multer({ dest: "uploads" });
 
-mongoose.connect(MONG_URL);
+mongoose.connect(MONG_URL).then(() => console.log("Connected"));
 
 app.get("/test", (_, res) => {
   res.json(
